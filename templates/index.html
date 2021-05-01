@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lobster|Lato|Zen+Dots" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+
+    <style media="screen">
+      body{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="about">
+      <a id="link" target="_blank" href="{{ url_for('about') }}">About UNWINTOE</a>
+      <a id="link" target="_blank" href="https://siddharthrai.com/">About Me</a>
+    </div>
+    <img id="logo" src="{{url_for('static', filename='logo.png')}}" />
+    <h1>Welcome to UnWinToe <br>An UNWINable tic-tac-TOE game</h1>
+    <br><br><br>
+    <form action="/" method="post">
+    <label><h2>Enter your name </h2></label><br><br><br>
+    <input name="username" type="text" ><br><br>
+    <button class="button" type="submit">Start Game</button>
+</form>
+
+  </body>
+</html>

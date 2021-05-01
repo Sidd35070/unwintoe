@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tic Tac Toe</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lobster|Lato|Zen+Dots" rel="stylesheet">
+        <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+        
+    </head>
+    <body>
+      <div class="about">
+        <a id="link" target="_blank" href="{{ url_for('about') }}">About UNWINTOE</a>
+        <a id="link" target="_blank" href="https://siddharthrai.com/">About Me</a>
+        <a id="link" target="_blank" href="{{ url_for('index') }}">Home</a>
+
+      </div>
+    <img id="logo-min" src="{{url_for('static', filename='logo.png')}}" />
+      <div class="container">
+        <div class="info info-red">
+          {{ winner }} won the game
+        </div>
+        <div class="game">
+          <center><table class="border-none">
+            {% block table %}
+              {% for i in range(3) %}
+                <tr>
+                    {% for j in range(3) %}
+                        <td>
+                            {% if game[i][j] %}
+                                {{ game[i][j] }}
+                            {% else %}
+                                __
+                            {% endif %}
+                        </td>
+                    {% endfor %}
+                </tr>
+              {% endfor %}
+            {% endblock %}
+          </table></center>
+
+          <div class="score">
+            <h3 class="score-head" >Scoreboard</h3>
+            <h4>score of Computer : {{ sc }}</h4>
+            <h4>score of {{ username }} : {{ su }}</h4>
+            <form  action="{{ url_for('reset') }}">
+              <button class="button" type="submit">Play again</button>
+              </form>
+          </div>
+        </div>
+      </div>
+
+    </body>
+
+</html>

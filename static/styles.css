@@ -1,0 +1,147 @@
+input[type="text"] {
+  font-family: "Zen Dots", cursive;
+  font-size: 30px;
+  color: rgb(16, 85, 131);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgb(7, 83, 182);
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: rgb(7, 30, 136);
+  border: none;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  color: white;
+}
+body {
+  font-family: "Zen Dots", cursive;
+  vertical-align: middle;
+  text-align: center;
+  padding: 3rem;
+}
+#logo {
+  width: 200px;
+  height: auto;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 3rem;
+  right: 2rem;
+}
+#link {
+  padding: 0.5rem;
+}
+
+body {
+  font-family: "Zen Dots", cursive;
+}
+#logo {
+  width: 200px;
+  height: auto;
+}
+#logo-min {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  width: 100px;
+  height: auto;
+}
+.info {
+  font-size: 1.5rem;
+}
+.info-red {
+  color: rgb(204, 41, 41);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.border-none {
+  border-collapse: collapse;
+  border: none;
+}
+
+.border-none td {
+  border: 5px solid rgb(78, 78, 78);
+  width: 200px;
+  height: 150px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.border-none tr:first-child td {
+  border-top: none;
+}
+
+.border-none tr:last-child td {
+  border-bottom: none;
+}
+
+.border-none tr td:first-child {
+  border-left: none;
+}
+
+.border-none tr td:last-child {
+  border-right: none;
+}
+td {
+  border: 1px solid black;
+  width: 150px;
+  height: 150px;
+  font-size: 30px;
+  text-align: center;
+}
+td > a {
+  font-size: 18px;
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: rgb(7, 30, 136);
+  border: none;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  color: white;
+}
+.info {
+  text-align: center;
+  color: rgb(7, 83, 182);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.score {
+  text-align: center;
+  color: rgb(7, 83, 182);
+  padding: 20px;
+  align-self: center;
+}
+.score-head {
+  font-size: 1.5rem;
+}
+.game {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+.container-abt > div {
+  margin-bottom: 3rem;
+}
+.welcome {
+  font-size: 1.7rem;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lobster|Lato|Zen+Dots" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <title>About UNWINTOE</title>
+</head>
+
+<body>
+    <div class="container-abt">
+    <img id="logo-min" src="{{url_for('static', filename='logo.png')}}" />
+
+        <div class="welcome">
+            Welcome to UNWINTOE
+        </div>
+        <div class="desc">
+           <p>UNWINTOE is an unbeatable tic-tac-toe game created using <strong>Python</strong> and <strong>Flask</strong>. </p> 
+           <p>UNWINTOE stands for "Unwinnable Tic-tac-toe". No matter what your skill level at this game is, you can always try the game and see if you can win it (let me know if you do).
+           </p>
+           <p><strong>INSTRUCTIONS TO PLAY</strong></p>
+           <p>1: Enter your name on the home page and click 'start game'</p>
+           <p>2: The computer starts the game and chooses randomly any of the nine boxes. 
+           </p>
+           <p>3: Choose any  box and click "Play X here" to play your chance</p>
+           <p>4: Keep playing until a winner is declared or the match is draw.</p>
+           <p>5: Click "Play again" button to play the game again</p>
+        </div>
+
+        <div class="abt-me">
+            <p><strong>ABOUT THE DEVELOPER</strong></p>
+            <p>This game is developed by <a target="_blank" href="https://siddharthrai.com/">Siddharth Rai</a></p>
+            <p>To know more about him <a target="_blank" href="https://siddharthrai.com/">click here</a></p>
+            <form  action="{{ url_for('index') }}">
+                <button class="button" type="submit">Home</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
