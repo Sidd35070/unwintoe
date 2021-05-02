@@ -6,20 +6,7 @@ input[type="text"] {
   border: none;
   border-bottom: 1px solid rgb(7, 83, 182);
 }
-.button {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: rgb(7, 30, 136);
-  border: none;
-  text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 200px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-  color: white;
-}
+
 body {
   font-family: "Zen Dots", cursive;
   vertical-align: middle;
@@ -55,12 +42,7 @@ body {
   width: 100px;
   height: auto;
 }
-.info {
-  font-size: 1.5rem;
-}
-.info-red {
-  color: rgb(204, 41, 41);
-}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -119,11 +101,16 @@ td > a {
   color: white;
 }
 .info {
+  font-size: 1.5rem;
   text-align: center;
   color: rgb(7, 83, 182);
   border-radius: 20px;
   padding: 20px;
   margin-bottom: 10px;
+}
+
+.info-red {
+  color: rgb(204, 41, 41);
 }
 .score {
   text-align: center;
@@ -144,4 +131,8 @@ td > a {
 }
 .welcome {
   font-size: 1.7rem;
+}
+footer {
+  margin-top: 3rem;
+  font-size: 0.7rem;
 }
