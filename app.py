@@ -130,8 +130,8 @@ def check(li, f, ch):
         return 3
 
 
-username = None
-game = None
+# username = None
+# game = None
 score_comp = 0
 score_player = 0
 
@@ -159,13 +159,14 @@ def index():
 def start():
     global score_comp
     global score_player
-    global game
+    # global game
     # global username
 
     if "board" not in session:
         score_comp = 0
         score_player = 0
         game = [[None, None, None], [None, None, None], [None, None, None]]
+        session["toe"] = game
         turn = "X"
         a = random.randrange(0, 3, 2)
         b = random.randrange(0, 3, 2)
@@ -178,8 +179,10 @@ def start():
 def play(row, col):
     fl = 0
     global score_comp
-    global score_player, game, username
+    global score_player, username
+    game = session["toe"]
     game[row][col] = "X"
+    session["toe"] = game
     fl = check(game, 0, "O")
 
     # this is just to check for winner
@@ -200,14 +203,15 @@ def play(row, col):
 @app.route("/reset")
 def reset():
     global score_comp
-    global score_player, game, username
+    global score_player, username
     game = [[None, None, None], [None, None, None], [None, None, None]]
+    session["toe"] = game
     turn = "X"
     a = random.randrange(0, 3, 2)
     b = random.randrange(0, 3, 2)
     game[a][b] = "O"
 
-    return render_template("game.html", game=game, sc=score_comp, su=score_player, username=session["username"])
+    return render_template("game.html", game=session["toe"], sc=score_comp, su=score_player, username=session["username"])
 
 
 @app.route("/about")
