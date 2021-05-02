@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lobster|Lato|Zen+Dots" rel="stylesheet">
     <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
-
+    <link rel="icon" href="{{url_for('static', filename='logo.png')}}" type="image/icon type">
     <style media="screen">
       body{
         text-align: center;
@@ -23,7 +23,7 @@
     <br><br><br>
     <form action="/" method="post">
     <label><h2>Enter your name </h2></label><br><br><br>
-    <input name="username" type="text" ><br><br>
+    <input name="username" type="text" required><br><br>
     <button class="button" type="submit">Start Game</button>
 </form>
 

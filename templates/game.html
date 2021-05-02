@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lobster|Lato|Zen+Dots" rel="stylesheet">
         <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+        <link rel="icon" href="{{url_for('static', filename='logo.png')}}" type="image/icon type">
+
     </head>
     <body>
       <div class="about">
@@ -30,7 +32,7 @@
                             {% elif not winner %}
                                 <a href="{{ url_for('play', row=i, col=j) }}">Play X here.</a>
                             {% elif winner %}
-                            __
+                              &nbsp;&nbsp;
                             {% endif %}
                         </td>
                     {% endfor %}

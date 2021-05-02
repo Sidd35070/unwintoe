@@ -163,8 +163,8 @@ def start():
     # global username
 
     if "board" not in session:
-        score_comp = 0
-        score_player = 0
+        session["score_comp"] = 0
+        session["score_player"] = 0
         game = [[None, None, None], [None, None, None], [None, None, None]]
         session["toe"] = game
         turn = "X"
@@ -172,14 +172,12 @@ def start():
         b = random.randrange(0, 3, 2)
         game[a][b] = "O"
 
-    return render_template("game.html", game=game, username=session["username"], sc=score_comp, su=score_player)
+    return render_template("game.html", game=game, username=session["username"], sc=session["score_comp"], su=session["score_player"])
 
 
 @app.route("/play/<int:row>/<int:col>")
 def play(row, col):
     fl = 0
-    global score_comp
-    global score_player, username
     game = session["toe"]
     game[row][col] = "X"
     session["toe"] = game
@@ -189,21 +187,19 @@ def play(row, col):
     fl = check(game, 4, "O")
 
     if fl == "O":
-        score_comp += 1
-        return render_template("win.html", game=game, winner="Computer", sc=score_comp, su=score_player, username=session["username"])
+        session["score_comp"] += 1
+        return render_template("win.html", game=game, winner="Computer", sc=session["score_comp"], su=session["score_player"], username=session["username"])
     elif fl == "X":
-        score_player += 1
-        return render_template("win.html", game=game, winner=session["username"], sc=score_comp, su=score_player)
+        session["score_player"] += 1
+        return render_template("win.html", game=game, winner=session["username"], sc=session["score_comp"], su=session["score_player"])
     elif fl == 3:
-        return render_template("draw.html", game=game, sc=score_comp, su=score_player, username=session["username"])
+        return render_template("draw.html", game=game, sc=session["score_comp"], su=session["score_player"], username=session["username"])
     else:
-        return render_template("game.html", game=game, sc=score_comp, su=score_player, username=session["username"])
+        return render_template("game.html", game=game, sc=session["score_comp"], su=session["score_player"], username=session["username"])
 
 
 @app.route("/reset")
 def reset():
-    global score_comp
-    global score_player, username
     game = [[None, None, None], [None, None, None], [None, None, None]]
     session["toe"] = game
     turn = "X"
@@ -211,7 +207,7 @@ def reset():
     b = random.randrange(0, 3, 2)
     game[a][b] = "O"
 
-    return render_template("game.html", game=session["toe"], sc=score_comp, su=score_player, username=session["username"])
+    return render_template("game.html", game=session["toe"], sc=session["score_comp"], su=session["score_player"], username=session["username"])
 
 
 @app.route("/about")
