@@ -13,6 +13,11 @@
 
 <body>
     <div class="container-abt">
+        <div class="about">
+            <a id="link" target="_blank" href="https://siddharthrai.com/">About Me</a>
+            <a id="link" target="_blank" href="{{ url_for('index') }}">Home</a>
+    
+          </div>
     <img id="logo-min" src="{{url_for('static', filename='logo.png')}}" />
 
         <div class="welcome">
@@ -32,9 +37,9 @@
         </div>
 
         <div class="abt-me">
-            <p><strong>ABOUT THE DEVELOPER</strong></p>
+            <p><strong>Source <Code></Code></strong></p>
             <p>This game is developed by <a target="_blank" href="https://siddharthrai.com/">Siddharth Rai</a></p>
-            <p>To know more about him <a target="_blank" href="https://siddharthrai.com/">click here</a></p>
+            <p>The source code of this game is available on <a target="_blank" href="https://github.com/Sidd35070/unwintoe">Github</a></p>
             <form  action="{{ url_for('index') }}">
                 <button class="button" type="submit">Home</button>
             </form>
